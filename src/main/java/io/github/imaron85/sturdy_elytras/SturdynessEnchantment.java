@@ -5,6 +5,7 @@ import net.minecraft.enchantment.EnchantmentTarget;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.item.ElytraItem;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.math.random.Random;
 
 public class SturdynessEnchantment extends Enchantment {
 	public SturdynessEnchantment() {
@@ -17,7 +18,22 @@ public class SturdynessEnchantment extends Enchantment {
 	}
 
 	@Override
+	public int getMinPower(int level) {
+		return 5 + (level - 1) * 8;
+	}
+
+	@Override
+	public int getMaxPower(int level) {
+		return this.getMinPower(level) + 20;
+	}
+	@Override
 	public int getMaxLevel() {
 		return 5;
+	}
+
+	public static boolean shouldPreventDamage(ItemStack item, int level, Random random) {
+		if(!(item.getItem() instanceof ElytraItem))
+			return false;
+		return random.nextInt(level + 1) > 0;
 	}
 }

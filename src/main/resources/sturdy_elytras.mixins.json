@@ -2,10 +2,10 @@
 	"required": true,
 	"package": "io.github.imaron85.sturdy_elytras.mixin",
 	"compatibilityLevel": "JAVA_17",
-	"mixins": [],
-	"server": [
-    	"ItemStackMixin"
+	"mixins": [
+		"ItemStackMixin"
 	],
+	"server": [],
 	"injectors": {
 		"defaultRequire": 1
 	}

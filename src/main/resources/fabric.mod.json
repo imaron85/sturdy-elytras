@@ -2,16 +2,17 @@
 	"schemaVersion": 1,
 	"id": "sturdy_elytras",
 	"version": "${version}",
-	"name": "Example mod",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"name": "Sturdy Elytras",
+	"description": "Adds the Sturdyness Enchantment for Elytras!",
 	"authors": [
-		"Me!"
+		"ImAron"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"homepage": "https://modrinth.com/mod/sturdy_elytras",
+		"sources": "https://github.com/imaron85/sturdy-elytras",
+		"issues": "https://github.com/imaron85/sturdy-elytras/issues"
 	},
-	"license": "CC0-1.0",
+	"license": "LGPL-3.0-only",
 	"icon": "assets/sturdy_elytras/icon.png",
 	"environment": "*",
 	"entrypoints": {
