@@ -1,5 +1,5 @@
 {
-  "description": { "translate": "enchantment.sturdy_elytras.sturdyness" },
+  "description": { "text": "Sturdyness" },
   "supported_items": "#sturdy_elytras:sturdyness_applicable",
   "primary_items": "#sturdy_elytras:sturdyness_applicable",
   "weight": 1,
