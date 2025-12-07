@@ -1,0 +1,32 @@
+{
+  "display": {
+    "icon": { "id": "minecraft:elytra" },
+    "title": { "text": "Icarus's Hubris" },
+    "description": { "text": "Manage to break an Elytra despite it having Sturdyness V" },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "parent": "sturdy_elytras:max_sturdyness",
+  "criteria": {
+    "broken_sturdy_elytra": {
+      "trigger": "minecraft:item_durability_changed",
+      "conditions": {
+        "item": {
+          "items": [ "minecraft:elytra" ],
+          "predicates": {
+            "minecraft:enchantments": [
+              {
+                "enchantments": "sturdy_elytras:sturdyness",
+                "levels": { "min": 5 }
+              }
+            ]
+          }
+        },
+        "durability": 1
+      }
+    }
+  },
+  "requirements": [ [ "broken_sturdy_elytra" ] ]
+}

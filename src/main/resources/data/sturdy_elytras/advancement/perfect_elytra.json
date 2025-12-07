@@ -1,0 +1,41 @@
+{
+  "display": {
+    "icon": { "id": "minecraft:elytra" },
+    "title": { "text": "Wings of Steel" },
+    "description": { "text": "Create the perfect Elytra: Sturdyness V, Unbreaking III, and Mending" },
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "sturdy_elytras:max_sturdyness",
+  "criteria": {
+    "has_perfect_elytra": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [ "minecraft:elytra" ],
+            "predicates": {
+              "minecraft:enchantments": [
+                {
+                  "enchantments": "sturdy_elytras:sturdyness",
+                  "levels": { "min": 5 }
+                },
+                {
+                  "enchantments": "minecraft:unbreaking",
+                  "levels": { "min": 3 }
+                },
+                {
+                  "enchantments": "minecraft:mending",
+                  "levels": { "min": 1 }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [ [ "has_perfect_elytra" ] ]
+}

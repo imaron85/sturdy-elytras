@@ -1,0 +1,45 @@
+{
+  "display": {
+    "icon": { "id": "minecraft:skull_banner_pattern" },
+    "title": { "text": "Crash Test Dummy" },
+    "description": { "text": "Slam into a wall with Sturdyness V." },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "parent": "sturdy_elytras:max_sturdyness",
+  "criteria": {
+    "hit_wall_with_wings": {
+      "trigger": "minecraft:entity_hurt_player",
+      "conditions": {
+        "damage": {
+          "type": {
+            "tags": [
+              {
+                "id": "minecraft:is_projectile",
+                "expected": false
+              }
+            ]
+          }
+        },
+        "player": {
+          "equipment": {
+            "chest": {
+              "items": ["minecraft:elytra"],
+              "predicates": {
+                "minecraft:enchantments": [
+                  {
+                    "enchantments": "sturdy_elytras:sturdyness",
+                    "levels": { "min": 5 }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "requirements": [["hit_wall_with_wings"]]
+}

@@ -1,0 +1,46 @@
+{
+  "display": {
+    "icon": { "id": "minecraft:phantom_membrane" },
+    "title": { "text": "Plan B" },
+    "description": { "text": "Obtain a Phantom Membrane while wearing Sturdy Wings (Mending is expensive!)" },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": true
+  },
+  "parent": "sturdy_elytras:max_sturdyness",
+  "criteria": {
+    "has_membrane_and_wings": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          { "items": [ "minecraft:phantom_membrane" ] }
+        ],
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "slots": {
+                "armor.chest": {
+                  "items": [ "minecraft:elytra" ],
+                  "sub_predicates": [
+                    {
+                      "minecraft:enchantments": [
+                        {
+                          "enchantments": "sturdy_elytras:sturdyness",
+                          "levels": { "min": 5 }
+                        }
+                      ]
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [ [ "has_membrane_and_wings" ] ]
+}

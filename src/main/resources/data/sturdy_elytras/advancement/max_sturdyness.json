@@ -1,0 +1,58 @@
+{
+  "display": {
+    "icon": {
+      "id": "minecraft:anvil"
+    },
+    "title": { "text": "Maximum Hardness" },
+    "description": { "text": "Obtain Sturdyness V on a Book or Elytra" },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "sturdy_elytras:found_sturdyness",
+  "criteria": {
+    "has_max_book": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:enchanted_book",
+            "predicates": {
+              "minecraft:stored_enchantments": [
+                {
+                  "enchantment": "sturdy_elytras:sturdyness",
+                  "levels": { "min": 5 }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "has_max_elytra": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:elytra",
+            "predicates": {
+              "minecraft:enchantments": [
+                {
+                  "enchantment": "sturdy_elytras:sturdyness",
+                  "levels": { "min": 5 }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_max_book",
+      "has_max_elytra"
+    ]
+  ]
+}
