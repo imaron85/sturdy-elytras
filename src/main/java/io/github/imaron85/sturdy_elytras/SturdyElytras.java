@@ -1,22 +1,25 @@
 package io.github.imaron85.sturdy_elytras;
 
-import net.minecraft.enchantment.Enchantment;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
 import net.fabricmc.api.ModInitializer;
+import net.minecraft.core.registries.Registries; // Moved from net.minecraft.registry
+import net.minecraft.resources.ResourceKey;      // Replaces RegistryKey
+import net.minecraft.resources.ResourceLocation; // Replaces Identifier
+import net.minecraft.world.item.enchantment.Enchantment; // Moved package
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class SturdyElytras implements ModInitializer {
-	// This logger is used to write text to the console and the log file.
-	// It is considered best practice to use your mod name as the logger's name.
-	// That way, it's clear which mod wrote info, warnings, and errors.
-	public static final Logger LOGGER = LoggerFactory.getLogger("sturdy_elytras");
+    public static final String MOD_ID = "sturdy_elytras";
+    public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
 
-	public static Enchantment STURDYNESS;
+    // RegistryKey is now ResourceKey in MojMap
+    public static final ResourceKey<Enchantment> STURDYNESS = ResourceKey.create(
+            Registries.ENCHANTMENT,
+            ResourceLocation.fromNamespaceAndPath(MOD_ID, "sturdyness")
+    );
 
-	@Override
-	public void onInitialize() {
-		STURDYNESS = Registry.register(Registries.ENCHANTMENT, "sturdy_elytras:sturdyness", new SturdynessEnchantment());
-	}
+    @Override
+    public void onInitialize() {
+        // Data-driven; no manual registration needed.
+    }
 }

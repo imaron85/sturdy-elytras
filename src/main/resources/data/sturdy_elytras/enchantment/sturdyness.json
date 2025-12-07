@@ -1,0 +1,44 @@
+{
+  "description": { "translate": "enchantment.sturdy_elytras.sturdyness" },
+  "supported_items": "#sturdy_elytras:sturdyness_applicable",
+  "primary_items": "#sturdy_elytras:sturdyness_applicable",
+  "weight": 1,
+  "max_level": 5,
+  "min_cost": {
+    "base": 5,
+    "per_level_above_first": 8
+  },
+  "max_cost": {
+    "base": 25,
+    "per_level_above_first": 8
+  },
+  "anvil_cost": 8,
+  "slots": [ "chest" ],
+  "effects": {
+    "minecraft:item_damage": [
+      {
+        "effect": {
+          "type": "minecraft:set",
+          "value": 0.0
+        },
+        "requirements": {
+          "condition": "minecraft:random_chance",
+          "chance": {
+            "type": "minecraft:enchantment_level",
+            "amount": {
+              "type": "minecraft:lookup",
+              "values": [
+                0.5,
+                0.6667,
+                0.75,
+                0.8,
+                0.8333
+              ],
+              "fallback": 0.9
+            }
+          }
+        }
+      }
+    ]
+  }
+}
